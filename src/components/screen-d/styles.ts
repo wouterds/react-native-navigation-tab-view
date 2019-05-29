@@ -15,4 +15,10 @@ export default StyleSheet.create({
     color: '#FFF',
     marginBottom: 25,
   },
+  tabView: {
+    flex: 1,
+  },
+  scene: {
+    flex: 1,
+  },
 });
