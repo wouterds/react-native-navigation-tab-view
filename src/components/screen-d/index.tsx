@@ -1,11 +1,11 @@
 // @flow
 import React, { useState } from 'react';
 import { View, SafeAreaView, Dimensions, Text } from 'react-native';
-import { TabView, SceneMap } from 'react-native-tab-view';
+import { TabView, SceneMap, TabBar } from 'react-native-tab-view';
 import styles from './styles';
 
 const FirstRoute = () => (
-  <View style={[styles.scene, { backgroundColor: '#f7d794' }]}>
+  <View style={[styles.scene, { backgroundColor: '#4a69bd' }]}>
     <SafeAreaView>
       <View style={styles.content}>
         <Text style={styles.title}>Screen D - Tab 1</Text>
@@ -14,7 +14,7 @@ const FirstRoute = () => (
   </View>
 );
 const SecondRoute = () => (
-  <View style={[styles.scene, { backgroundColor: '#f3a683' }]}>
+  <View style={[styles.scene, { backgroundColor: '#4a69bd' }]}>
     <SafeAreaView>
       <View style={styles.content}>
         <Text style={styles.title}>Screen D - Tab 2</Text>
@@ -35,6 +35,9 @@ const ScreenD = () => {
       <TabView
         style={styles.tabView}
         navigationState={{ index, routes }}
+        renderTabBar={(props) => (<SafeAreaView>
+          <TabBar style={styles.tabBar} {...props} />
+        </SafeAreaView>)}
         renderScene={SceneMap({
           first: FirstRoute,
           second: SecondRoute,
